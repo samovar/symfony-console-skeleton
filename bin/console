@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+use App\Console\Application;
+
+set_time_limit(0);
+
+require __DIR__.'/../vendor/autoload.php';
+
+$app = new Application('app');
+$app->run();
