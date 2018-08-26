@@ -21,7 +21,7 @@ Console application
 
     protected function getDefaultCommands()
     {
-        return array_merge(parent::getDefaultCommands(), [
+        return \array_merge(parent::getDefaultCommands(), [
             new Command\RunCommand(),
         ]);
     }
