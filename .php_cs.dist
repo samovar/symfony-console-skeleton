@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__)
-    ->exclude(['assets', 'bin', 'public', 'var', 'vendor'])
+    ->exclude(['vendor'])
 ;
 
 return PhpCsFixer\Config::create()
@@ -42,6 +42,9 @@ return PhpCsFixer\Config::create()
         'strict_param' => true,
         'ternary_to_null_coalescing' => true,
         'ordered_class_elements' => true,
+        'class_attributes_separation' => ['elements' => ['const', 'method', 'property']],
     ])
     ->setFinder($finder)
 ;
+
+

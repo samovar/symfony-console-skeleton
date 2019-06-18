@@ -1,8 +1,12 @@
 .PHONY: all
 all: build
 
+.PHONY: cs
+cs:
+	vendor/bin/php-cs-fixer fix
+
 .PHONY: build
-build: tests clean
+build: tests clean cs
 	composer install --no-dev
 	box compile
 	composer install
@@ -15,9 +19,9 @@ clean:
 tests:
 	phpunit
 
-.PHONY: release
-release: build
-	cp build/kr-repository-tools.phar releases/kr-repository-tools.phar
-	git add --all
-	git commit -m "New release"
-	git push origin master
+#.PHONY: release
+#release: build
+#	cp build/app.phar releases/app.phar
+#	git add --all
+#	git commit -m "New release"
+#	git push origin master
