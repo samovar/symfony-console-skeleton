@@ -17,7 +17,7 @@ clean:
 
 .PHONY: tests
 tests:
-	phpunit
+	vendor/bin/simple-phpunit
 
 #.PHONY: release
 #release: build
