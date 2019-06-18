@@ -12,6 +12,11 @@ class Application extends BaseApplication
 Console application
 ';
 
+    public function getVersion(): string
+    {
+        return '@git_commit_short@';
+    }
+
     public function getName()
     {
         $name = parent::getName();

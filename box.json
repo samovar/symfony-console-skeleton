@@ -1,31 +1,27 @@
 {
-    "alias": "box.phar",
-    "chmod": "0755",
-    "compactors": [
-        "Herrera\\Box\\Compactor\\Json",
-        "Herrera\\Box\\Compactor\\Php"
-    ],
-    "directories": [
-        "src",
-        "vendor"
-    ],
-    "extract": true,
-    "finder": [
-        {
-            "name": "*.php",
-            "exclude": [
-                "Tests",
-                "tests"
-            ],
-            "in": "vendor"
-        }
-    ],
-    "git-commit": "git-commit",
-    "git-version": "git-version",
-    "main": "bin/console",
-    "output": "build/app-@git-version@.phar",
-    "replacements": {
-        "manifest_url": "https://box-project.github.io/box2/manifest.json"
-    },
-    "stub": true
+  "alias": "box.phar",
+  "chmod": "0755",
+  "compactors": [
+    "KevinGH\\Box\\Compactor\\Php",
+    "KevinGH\\Box\\Compactor\\PhpScoper",
+    "KevinGH\\Box\\Compactor\\Json"
+  ],
+  "directories": [
+    "src",
+    "vendor"
+  ],
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": [
+        "Tests",
+        "tests"
+      ],
+      "in": "vendor"
+    }
+  ],
+  "git-commit-short": "git_commit_short",
+  "main": "bin/console",
+  "output": "build/app.phar",
+  "stub": true
 }
