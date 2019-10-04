@@ -15,6 +15,8 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class Application extends BaseApplication
 {
+    public const CONFIG_DIST_FILENAME = 'config.yaml';
+
     protected $logo = '
 Console application
 ';
@@ -62,7 +64,7 @@ Console application
         $this->container->registerExtension(new AppExtension());
 
         if (null === $configFile) {
-            $configFile = 'config.yaml';
+            $configFile = static::CONFIG_DIST_FILENAME;
         }
 
         try {
@@ -83,9 +85,18 @@ Console application
         return $this->container;
     }
 
+    /**
+     * @return string
+     */
+    public function getRootDir(): string
+    {
+        return $this->rootDir;
+    }
+
     protected function getDefaultCommands(): array
     {
         return \array_merge(parent::getDefaultCommands(), [
+            new Command\InitCommand(),
             new Command\RunCommand(),
         ]);
     }

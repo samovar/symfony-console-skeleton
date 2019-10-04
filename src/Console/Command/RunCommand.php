@@ -9,12 +9,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class RunCommand extends BaseCommand
 {
+    protected static $defaultName = 'run';
+
     protected function configure(): void
     {
         parent::configure();
 
         $this
-            ->setName('run')
             ->setDescription('Run command')
             ->setHelp(<<<'EOF'
 <info>php %command.full_name%</info>
