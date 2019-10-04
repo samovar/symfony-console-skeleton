@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\Console\Command;
 
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
-class RunCommand extends Command
+class RunCommand extends BaseCommand
 {
     protected function configure(): void
     {
+        parent::configure();
+
         $this
             ->setName('run')
             ->setDescription('Run command')
@@ -25,8 +25,9 @@ EOF
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $io = new SymfonyStyle($input, $output);
-        $io->text('Hello!');
+        $name = $this->getParameter('name');
+
+        $this->io->writeln(\sprintf('Hello "%s"!', $name));
 
         return 0;
     }
