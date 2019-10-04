@@ -13,7 +13,7 @@ class RunCommandTest extends TestCase
 {
     public function testRunCommand(): void
     {
-        $application = new Application();
+        $application = new Application(\dirname(__DIR__, 3));
 
         $application->add(new RunCommand());
 
@@ -24,6 +24,6 @@ class RunCommandTest extends TestCase
         ]);
 
         $output = $commandTester->getDisplay();
-        $this->assertContains('Hello!', $output);
+        $this->assertContains('Hello "%username%"!', $output);
     }
 }
