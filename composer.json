@@ -1,6 +1,7 @@
 {
     "name": "samovar/symfony-console-skeleton",
     "type": "project",
+    "description": "Symfony console skeleton",
     "license": "MIT",
     "authors": [
         {
