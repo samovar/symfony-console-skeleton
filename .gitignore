@@ -6,3 +6,4 @@
 /build/*
 !build/.gitkeep
 /phpunit.xml
+/.phpunit.result.cache
