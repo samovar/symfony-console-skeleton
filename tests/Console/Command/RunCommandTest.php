@@ -24,6 +24,6 @@ class RunCommandTest extends TestCase
         ]);
 
         $output = $commandTester->getDisplay();
-        $this->assertContains('Hello "%username%"!', $output);
+        $this->assertStringContainsString('Hello "%username%"!', $output);
     }
 }
