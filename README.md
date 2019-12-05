@@ -1,6 +1,6 @@
 ## Console application
 
-![](https://github.com/samovar/symfony-console-skeleton/workflows/build/badge.svg)
+![](https://github.com/samovar/symfony-console-skeleton/workflows/tests/badge.svg)
 
 The console skeleton application
 
