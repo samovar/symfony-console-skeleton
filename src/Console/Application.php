@@ -85,9 +85,6 @@ Console application
         return $this->container;
     }
 
-    /**
-     * @return string
-     */
     public function getRootDir(): string
     {
         return $this->rootDir;
