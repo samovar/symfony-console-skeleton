@@ -20,4 +20,13 @@ composer create-project samovar/symfony-console-skeleton app
 
 ```bash
 make
-```
+
+```run command
+$ cd app
+$ php bin/console run
+```Hello "%username%"!
+
+```run tests 
+./vendor/bin/simple-phpunit
+
+
